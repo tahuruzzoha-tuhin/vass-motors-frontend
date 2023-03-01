@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import { Route, Redirect } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 import useContexts from "../hooks/useContexts.js";
 
 function AdminRoute(props) {
@@ -9,14 +9,14 @@ function AdminRoute(props) {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(`https://vass-motors.herokuapp.com/admin/${email}`)
+    fetch(`https://vass.onrender.com/admin/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
         console.log(user);
         setLoading(false);
       });
-  }, [email]);
+  }, [email, user]);
   if (loading) {
     return (
       <div className="text-center my-5 private-spinner py-5">

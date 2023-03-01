@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import {
-  Button,
-  Col,
-  Form,
-  FormControl,
-  InputGroup,
-  Row,
+    Button,
+    Col,
+    Form,
+    FormControl,
+    InputGroup,
+    Row
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
 import { useHistory, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./../assets/css/AddService.css";
 
 const UpdateProduct = () => {
@@ -19,7 +19,7 @@ const UpdateProduct = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`https://vass-motors.herokuapp.com/updateOne/${id}`)
+    fetch(`https://vass.onrender.com/updateOne/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -37,7 +37,7 @@ const UpdateProduct = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://vass-motors.herokuapp.com/updateProduct?id=${id}`,
+          `https://vass.onrender.com/updateProduct?id=${id}`,
           {
             method: "put",
             headers: { "content-type": "application/json" },

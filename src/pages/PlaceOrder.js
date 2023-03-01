@@ -1,10 +1,9 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
-import { useHistory, useParams } from "react-router";
 import { useForm } from "react-hook-form";
-import useContexts from "../hooks/useContexts.js";
+import { useHistory, useParams } from "react-router";
 import Swal from "sweetalert2";
+import useContexts from "../hooks/useContexts.js";
 
 const PlaceOrder = () => {
   const history = useHistory();
@@ -12,7 +11,7 @@ const PlaceOrder = () => {
   const [product, setProduct] = useState({});
   const { displayName, email } = useContexts();
   useEffect(() => {
-    fetch(`https://vass-motors.herokuapp.com/placeorder/${id}`)
+    fetch(`https://vass.onrender.com/placeorder/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
@@ -26,7 +25,7 @@ const PlaceOrder = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch("https://vass-motors.herokuapp.com/placeorder", {
+        fetch("https://vass.onrender.com/placeorder", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ ...data, ...product }),

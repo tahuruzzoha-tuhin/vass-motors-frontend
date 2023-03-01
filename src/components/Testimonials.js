@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Card, Spinner } from "react-bootstrap";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, Pagination } from "swiper";
-import Fade from "react-reveal/Fade";
-import Testimonial from "./Testimonial.js";
 import toast from "react-hot-toast";
+import Fade from "react-reveal/Fade";
+import SwiperCore, { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "./../assets/css/Testimonials.css";
+import Testimonial from "./Testimonial.js";
 
 const Testimonials = () => {
   SwiperCore.use([Pagination, Autoplay]);
   const [loading, setLoading] = useState(true);
   const [Reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://vass-motors.herokuapp.com/reviews")
+    fetch("https://vass.onrender.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

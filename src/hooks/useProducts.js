@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const useProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://vass-motors.herokuapp.com/products")
+    fetch("https://vass.onrender.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

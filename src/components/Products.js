@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Spinner } from "react-bootstrap";
 import useProducts from "../hooks/useProducts.js";
 import Product from "./Product.js";
-import Bounce from "react-reveal/Bounce";
 
 const Products = () => {
   const products = useProducts();

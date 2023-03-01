@@ -1,5 +1,4 @@
 import React from "react";
-import contactNow from "./../assets/images/contact.png";
 import { Col, Container, Row } from "react-bootstrap";
 import "./../assets/css/footer.css";
 import Zoom from "react-reveal/Zoom";

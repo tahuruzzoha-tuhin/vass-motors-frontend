@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Spinner } from "react-bootstrap";
 import { Route, Switch, useRouteMatch } from "react-router";
-import Profile from "../components/Profile.js";
-import Orders from "../components/Orders.js";
 import { NavLink } from "react-router-dom";
+import "../assets/css/admin.css";
 import AddProduct from "../components/AddProduct.js";
+import AddReview from "../components/AddReview.js";
 import MakeAdmin from "../components/MakeAdmin.js";
 import ManageProducts from "../components/ManageProducts.js";
-import "../assets/css/admin.css";
 import MyOrders from "../components/MyOrders.js";
-import UpdateProduct from "../components/UpdateProduct.js";
-import AddReview from "../components/AddReview.js";
+import Orders from "../components/Orders.js";
 import Payment from "../components/Payment.js";
-import AdminRoute from "../protectedRoute/AdminRoute.js";
+import Profile from "../components/Profile.js";
+import UpdateProduct from "../components/UpdateProduct.js";
 import useContexts from "../hooks/useContexts.js";
+import AdminRoute from "../protectedRoute/AdminRoute.js";
 
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
@@ -21,7 +21,7 @@ const Dashboard = () => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(`https://vass-motors.herokuapp.com/admin/${email}`)
+    fetch(`https://vass.onrender.com/admin/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);

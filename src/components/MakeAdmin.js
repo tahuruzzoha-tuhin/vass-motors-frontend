@@ -9,7 +9,7 @@ const MakeAdmin = () => {
 
   const onSubmit = (data) => {
     axios
-      .put("https://vass-motors.herokuapp.com/addAdmin", data)
+      .put("https://vass.onrender.com/addAdmin", data)
       .then((res) => {
         if (res?.data?.modifiedCount) {
           reset();

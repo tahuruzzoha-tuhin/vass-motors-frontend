@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Rating from "react-rating";
-import useContexts from "../hooks/useContexts.js";
-import Swal from "sweetalert2";
 import { useHistory } from "react-router";
+import Swal from "sweetalert2";
+import useContexts from "../hooks/useContexts.js";
 
 const AddReview = () => {
   const history = useHistory();
@@ -24,7 +24,7 @@ const AddReview = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch("https://vass-motors.herokuapp.com/addReview", {
+        fetch("https://vass.onrender.com/addReview", {
           method: "post",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(data),

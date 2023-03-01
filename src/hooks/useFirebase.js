@@ -1,14 +1,12 @@
-import firebaseInIt from "../firebase/firebase.init.js";
 import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-  updateProfile,
+    createUserWithEmailAndPassword, getAuth, onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signOut,
+    updateProfile
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import firebaseInIt from "../firebase/firebase.init.js";
 firebaseInIt();
 const auth = getAuth();
 
@@ -49,7 +47,7 @@ const useFirebase = () => {
   }
   // add user to db
   function addUserToDB(name, email) {
-    fetch("https://vass-motors.herokuapp.com/users", {
+    fetch("https://vass.onrender.com/users", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ name, email }),

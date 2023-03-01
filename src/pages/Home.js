@@ -9,7 +9,6 @@ import collection1 from "./../assets/images/motors/m3.jpg";
 import collection2 from "./../assets/images/motors/m8.jpg";
 import collection3 from "./../assets/images/motors/m9.jpg";
 import collection4 from "./../assets/images/motors/m10.jpg";
-import Bounce from "react-reveal/Bounce";
 import Testimonials from "../components/Testimonials.js";
 const Home = () => {
   const products = useProducts();

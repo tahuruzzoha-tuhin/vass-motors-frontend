@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Spinner, Table, Button } from "react-bootstrap";
+import { Button, Spinner, Table } from "react-bootstrap";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import useContexts from "../hooks/useContexts.js";
@@ -10,7 +10,7 @@ const Orders = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://vass-motors.herokuapp.com/orders?email=${email}`)
+    fetch(`https://vass.onrender.com/orders?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -27,7 +27,7 @@ const Orders = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://vass-motors.herokuapp.com/placeorder/${id}`, {
+        fetch(`https://vass.onrender.com/placeorder/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
